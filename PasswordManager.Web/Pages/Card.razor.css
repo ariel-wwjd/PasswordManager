@@ -1,0 +1,78 @@
+﻿.card {
+    padding: 10px;
+    height: 120px;
+    width: 260px;
+    box-shadow: 1px 1px 4px 0px rgba(0,0,0,0.4);
+    margin: 6px;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: ease-in-out box-shadow 300ms;
+}
+
+.card:hover {
+    box-shadow: 2px 2px 8px 0px rgba(0,0,0,0.5);
+}
+
+.card .image-container {
+    height: 50%;
+    width: 100%;
+    position: relative;
+}
+
+.card .image-container .image {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    right: 0;
+}
+
+.card .image-container .password-container {
+    position: absolute;
+    background-color: rgba(220, 220, 220);
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: ease-in-out opacity 300ms;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card:hover .image-container .password-container {
+    opacity: 0.95;
+}
+
+.card .data-container {
+    height: 40%;
+    color: rgba(140,140,140);
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card .data-container .left-area .service {
+    height: 18px;
+    font-weight: 600;
+    font-size: 16px;
+
+}
+
+.card .data-container .left-area .username {
+    height: 18px;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.card .data-container .right-area {
+    display: flex;
+    align-items: center;
+    opacity: 0;
+    transition: ease-in-out opacity 300ms;
+}
+
+.card:hover .data-container .right-area {
+    opacity: 1;
+}

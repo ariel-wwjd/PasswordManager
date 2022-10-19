@@ -1,0 +1,11 @@
+﻿.container {
+    margin: 4px 0px;
+}
+
+.container .label {
+    font-weight: 600;
+}
+
+.container input {
+    width: 100%
+}

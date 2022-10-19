@@ -1,0 +1,21 @@
+﻿@page "/User/{Id:int}"
+@inherits UserBase
+
+<PageTitle>User</PageTitle>
+
+<div class="user-view">
+    <h3>users View</h3>
+
+    <CardList GroupedCards="@SplitList()" />
+
+    <div class="add-card"><ButtonIcon Icon="Icons.Add" onClick="() => UpdateShowCreateCardModal()" /></div>
+
+
+    @if (ShowCreateCardModal)
+    {
+        <div class="modal">
+            <Modal />
+            <ModalForm Title="Create Card" onClose="@UpdateShowCreateCardModal" Data="@Data" Role="FormRole.Create" />
+        </div>
+    }
+</div>

@@ -1,0 +1,13 @@
+﻿button {
+    border: none;
+    background-color: transparent;
+}
+
+button, svg {
+    fill: rgba(140,140,140);
+    transition: ease-in-out fill 300ms;
+}
+
+button, svg:hover {
+    fill: rgba(60,60,60);
+}

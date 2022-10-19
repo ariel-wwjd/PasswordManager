@@ -1,0 +1,21 @@
+﻿@inherits CardListBase
+
+<div class="card-list">
+    @foreach (var group in GroupedCards)
+    {
+        CurrentGroup = group.ToList();
+        <div class="folder-tab">
+            <span class="">@CurrentGroup[0].FolderName</span>
+            <span>(@CurrentGroup.Count)</span>
+            <span>▼</span>
+
+        </div>
+        <div class="folder">
+            @foreach (var card in group)
+            {
+                <Card Data="@card" />
+            }
+        </div>
+    }
+</div>
+

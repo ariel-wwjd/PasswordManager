@@ -1,0 +1,60 @@
+﻿.form {
+    position: relative;
+    z-index: 20;
+    background-color: rgb(240, 240, 240);
+    width: 70%;
+    min-width: 300px;
+    max-width: 640px;
+}
+
+.form .header {
+    color: whitesmoke;
+    background-color: rgb(220, 22, 38);
+    padding: 4px 40px;
+    position: relative;
+    text-align: center;
+}
+
+.form .header .button {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.form .content-form {
+    padding: 12px;
+}
+
+.form .content-form .inputs {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form .content-form .settings {
+    margin-top: 20px;
+}
+
+.form .content-form .inputs .input-container {
+    width: 50%;
+}
+
+.form .content-form .inputs .folder-name {
+    position: relative;
+}
+
+.form .content-form .inputs .folder-name span {
+    position: absolute;
+    top: 32px;
+    right: 40px;
+    color: rgb(200,200,200);
+}
+
+.form .content-form .actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.form .content-form .actions .buttons {
+    display: flex;
+}

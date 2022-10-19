@@ -1,0 +1,15 @@
+﻿.card-list {
+    color: rgba(140,140,140);
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card-list .folder-tab {
+    margin-top: 40px;
+    border-bottom: 2px solid rgba(230,230,230);
+}
+
+.card-list .folder {
+    margin-top: 8px;
+    display: flex;
+    flex-wrap: wrap;
+}

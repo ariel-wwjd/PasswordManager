@@ -1,0 +1,31 @@
+﻿@inherits ModalFormBase
+ 
+<div class="form">
+    <div class="header">
+        <span class="title">@Title</span>
+        <div class="button"><ButtonIcon Icon="Icons.Close" onClick="() => callOnClose()"/></div>
+    </div>
+    <div class="content-form">
+        <form class="inputs">
+            <Input Label="Url:" Value="@Data.Url" onChange="@UpdateValues" />
+            <div class="input-container"><Input Label="Name:" Value="@Data.ServiceName" onChange="@UpdateValues" /></div>
+            <div class="input-container folder-name"><Input Label="Folder Id:" Value="@Data.FolderId.ToString()" onChange="@UpdateValues" Type="number" /><span>@Data.FolderName</span></div>
+            <div class="input-container"><Input Label="Username:" Value="@Data.Username" onChange="@UpdateValues" /></div>
+            <div class="input-container"><Input Label="Password:" Value="@Data.Password" onChange="@UpdateValues" /></div>
+            <Input Label="Image:" Value="@Data.Image" onChange="@UpdateValues" />
+        </form>
+        <div class="settings">Advanced Settings:</div>
+        <div class="actions">
+            <div class="icons">
+                <ButtonIcon Icon="Icons.Star" />
+                <ButtonIcon Icon="Icons.Group" />
+                <ButtonIcon Icon="Icons.Delete" />
+                <ButtonIcon Icon="Icons.Edit" />
+            </div>
+            <div class="buttons">
+                <Button Label="CANCEL" onClick="() => callOnClose()" />
+                <Button Label="SAVE" onClick="() => SaveChanges()" />
+            </div>
+        </div>
+    </div>
+</div>

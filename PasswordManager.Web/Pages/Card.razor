@@ -1,0 +1,37 @@
+﻿@inherits CardBase
+
+<div class="card">
+    <div class="image-container">
+        <div class="image">
+            <Image Src="@Data.Image" Alt="Service Image" />
+        </div>
+        <div class="password-container">
+            @if (ShowPassword)
+            {
+                <span>@Data.Password</span>
+                <ButtonIcon Icon="@Icons.Copy" onClick="() => UpdateShowPassword()" />
+            }
+            else
+            {
+                <Button Label="SHOW PASSWORD" onClick="@UpdateShowPassword" />
+            }
+        </div>
+    </div>
+    <div class="data-container">
+        <div class="left-area">
+            <div class="service">@Data.ServiceName</div>
+            <div class="username">@Data.Username</div>
+        </div>
+        <div class="right-area">
+            <ButtonIcon Icon="Icons.Edit" onClick="() => UpdateShowEditCardModal()" />
+            <ButtonIcon Icon="Icons.Group" />
+            <ButtonIcon Icon="Icons.Delete" onClick="() => DeleteCard(Data.PasswordId)" />
+        </div>
+    </div>
+</div>
+
+@if (ShowEditCardModal)
+{
+    <Modal />
+    <ModalForm Title="Edit Card" onClose="@UpdateShowEditCardModal" Data="@Data" Role="FormRole.Edit" />
+}
