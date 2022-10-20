@@ -19,12 +19,12 @@ namespace PasswordManager.Api.Entities
         public int PasswordId { get; set; }
 
         /// <summary>
-        /// string Email for the current user
+        /// string Username for the current user
         /// </summary>
         public string Username { get; set; }
 
         /// <summary>
-        /// string Name for the colder where the password belongs
+        /// string Name for the folder where the password belongs
         /// </summary>
         public string FolderName { get; set; }
 
@@ -44,7 +44,7 @@ namespace PasswordManager.Api.Entities
         public string Image { get; set; }
 
         /// <summary>
-        /// string Password
+        /// string Password for the service to be created
         /// </summary>
         public string Password { get; set; }
 

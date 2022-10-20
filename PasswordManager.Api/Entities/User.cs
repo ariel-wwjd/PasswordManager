@@ -9,7 +9,7 @@ namespace PasswordManager.Api.Entities
         public int Id { get; set; }
 
         /// <summary>
-        /// string Users Name
+        /// string User's Name
         /// </summary>
         public string? Name { get; set; }
 
@@ -24,7 +24,7 @@ namespace PasswordManager.Api.Entities
         public string? Password { get; set; }
 
         /// <summary>
-        /// string Url of the picture profile of the user
+        /// string Url of the picture profile for the user
         /// </summary>
         public string? Image { get; set; }
     }
