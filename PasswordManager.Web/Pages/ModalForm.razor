@@ -7,12 +7,54 @@
     </div>
     <div class="content-form">
         <form class="inputs">
-            <Input Label="Url:" Value="@Data.Url" onChange="@UpdateValues" />
-            <div class="input-container"><Input Label="Name:" Value="@Data.ServiceName" onChange="@UpdateValues" /></div>
-            <div class="input-container folder-name"><Input Label="Folder Id:" Value="@Data.FolderId.ToString()" onChange="@UpdateValues" Type="number" /><span>@Data.FolderName</span></div>
-            <div class="input-container"><Input Label="Username:" Value="@Data.Username" onChange="@UpdateValues" /></div>
-            <div class="input-container"><Input Label="Password:" Value="@Data.Password" onChange="@UpdateValues" /></div>
-            <Input Label="Image:" Value="@Data.Image" onChange="@UpdateValues" />
+            <Input
+                Label="Url:"
+                Value="@Data.Url"
+                onChange="@UpdateValues"
+                IsRequired="true"
+                RequiredMessage="The Url can not be Empty"
+            />
+            <div class="input-container">
+                <Input
+                    Label="Name:"
+                    Value="@Data.ServiceName"
+                    onChange="@UpdateValues"
+                    IsRequired="true"
+                    RequiredMessage="The Name can not be Empty"
+                />
+            </div>
+            <div class="input-container folder-name">
+                <Input
+                    Label="Folder Id:"
+                    Value="@Data.FolderId.ToString()"
+                    onChange="@UpdateValues"
+                    Type="number"
+                />
+                <span>@Data.FolderName</span>
+            </div>
+            <div class="input-container">
+                <Input
+                    Label="Username:"
+                    Value="@Data.Username"
+                    onChange="@UpdateValues"
+                    IsRequired="true"
+                    RequiredMessage="The Username can not be Empty"
+                />
+            </div>
+            <div class="input-container">
+                <Input
+                    Label="Password:"
+                    Value="@Data.Password"
+                    onChange="@UpdateValues"
+                    IsRequired="true"
+                    RequiredMessage="The Password can not be Empty"
+                    Type="password"
+                />
+            </div>
+            <Input
+                Label="Image:"
+                Value="@Data.Image"
+                onChange="@UpdateValues" />
         </form>
         <div class="settings">Advanced Settings:</div>
         <div class="actions">
@@ -24,7 +66,24 @@
             </div>
             <div class="buttons">
                 <Button Label="CANCEL" onClick="() => callOnClose()" />
-                <Button Label="SAVE" onClick="() => SaveChanges()" />
+                @if (IsRequiredDataMissing)
+                {
+                    <Button
+                        ClassNames="@ButtonClassName.disabled"
+                        onClick="() => SaveChanges()"
+                        Label="SAVE" Type="submit"
+                        PreventDefault="true"
+                    />
+                }
+                else
+                {
+                    <Button
+                        onClick="() => SaveChanges()"
+                        Label="SAVE"
+                        Type="submit"
+                        PreventDefault="true"
+                    />
+                }
             </div>
         </div>
     </div>

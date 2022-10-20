@@ -1,6 +1,10 @@
 ﻿@inherits ButtonBase
 
-<button @onclick="callOnClick" type="@Type" @onclick:preventDefault="@PreventDefault">@Label</button>
-
-
-
+<button
+    class="@ClassNames"
+    @onclick="callOnClick"
+    type="@Type"
+    @onclick:preventDefault="@PreventDefault"
+>
+    @Label
+</button>

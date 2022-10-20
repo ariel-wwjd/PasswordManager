@@ -16,3 +16,8 @@ button:hover {
     box-shadow: 2px 2px 2px 0px rgba(0,0,0,0.3);
     background-color: rgba(70, 70, 70);
 }
+
+.disabled {
+    color: rgba(140, 140, 140);
+    pointer-events: none;
+}

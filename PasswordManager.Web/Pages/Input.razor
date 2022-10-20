@@ -1,6 +1,23 @@
 ﻿@inherits InputBase
 
 <div class="container">
-    <div class="label">@Label</div>
-    <input value="@Value" placeholder="@Placeholder" @onchange="callOnChange" type="@Type" />
+    <div class="label">
+        <span>@Label</span>
+        @if (IsRequired)
+        {
+            <span> *</span>
+        }
+        else
+        {
+            <span></span>
+        }
+    </div>
+    <input
+        value="@Value"
+        placeholder="@Placeholder"
+        @onchange="callOnChange"
+        type="@Type"
+        required="@IsRequired"
+    />
+    <div class="required-message">@RequiredMessage</div>
 </div>

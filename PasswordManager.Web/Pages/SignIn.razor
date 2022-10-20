@@ -4,20 +4,50 @@
 <PageTitle>Sign In</PageTitle>
 <div class="signin">
     <h3>SIGN IN</h3>
-
-
-
-
-    <form>
-        <Input Value="" Label="Username" Placeholder="Name" onChange="@UpdateValues" Type="text" />
-        <Input Value="" Label="Password" Placeholder="password" onChange="@UpdateValues" Type="password" />
+    <form >
+        <Input
+            Value=""
+            Label="Username"
+            Placeholder="Name"
+            onChange="@UpdateValues"
+            Type="text"
+            IsRequired="true"
+            RequiredMessage="The Username can not be empty"
+        />
+        <Input
+            Value=""
+            Label="Password"
+            Placeholder="password"
+            onChange="@UpdateValues"
+            Type="password"
+            IsRequired="true"
+            RequiredMessage="The Password can not be empty"
+        />
         <div>
-            @if (error != "")
+            @if (Error != "")
             {
-                <span>@error</span>
+                <span>@Error</span>
             }
         </div>
-        <Button onClick="() => SignIn(username, password)" Label="SIGN IN" Type="submit" PreventDefault="true" />
+        <div>
+            @if (IsRequiredDataMissing)
+            {
+                <Button
+                    ClassNames="@ButtonClassName.disabled"
+                    onClick="() => SignIn(Username, Password)"
+                    Label="SIGN IN" Type="submit"
+                    PreventDefault="true"
+                />
+            }
+            else
+            {
+                <Button
+                    onClick="() => SignIn(Username, Password)"
+                    Label="SIGN IN"
+                    Type="submit"
+                    PreventDefault="true"
+                />
+            }
+        </div>
     </form>
 </div>
-

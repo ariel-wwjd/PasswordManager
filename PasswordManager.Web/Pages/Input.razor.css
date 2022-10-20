@@ -7,5 +7,18 @@
 }
 
 .container input {
-    width: 100%
+    width: 100%;
+}
+
+.container input:invalid + .required-message {
+    color: rgba(237, 67, 55, 0.6);
+    opacity: 1;
+}
+
+.container .required-message {
+    opacity: 0;
+    text-align: end;
+    padding-right: 4px;
+    height: 12px;
+    font-size: 12px;
 }

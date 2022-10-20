@@ -18,6 +18,12 @@ namespace PasswordManager.Web.Pages
         public string Type { get; set; }
 
         [Parameter]
+        public bool IsRequired { get; set; }
+
+        [Parameter]
+        public string RequiredMessage { get; set; }
+
+        [Parameter]
         public Action<string, string> onChange { get; set; }
 
         protected void callOnChange(ChangeEventArgs args)

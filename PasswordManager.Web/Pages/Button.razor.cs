@@ -1,6 +1,12 @@
 ﻿using System;
 using Microsoft.AspNetCore.Components;
 
+public enum ButtonClassName
+{
+    enabled,
+    disabled,
+}
+
 namespace PasswordManager.Web.Pages
 {
     public class ButtonBase:ComponentBase
@@ -13,6 +19,9 @@ namespace PasswordManager.Web.Pages
 
         [Parameter]
         public Boolean PreventDefault { get; set; } = false;
+
+        [Parameter]
+        public ButtonClassName ClassNames { get; set; }
 
         [Parameter]
         public EventCallback onClick { get; set; }

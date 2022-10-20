@@ -23,7 +23,7 @@ namespace PasswordManager.Web.Pages
         public string Title { get; set; }
 
         [Parameter]
-        public CardDto Data { get; set; }
+        public CardDto Data { get; set; } = new CardDto();
 
         [Parameter]
         public EventCallback onClose { get; set; }
@@ -31,6 +31,12 @@ namespace PasswordManager.Web.Pages
         [Parameter]
         public FormRole Role { get; set; }
 
+        public bool IsRequiredDataMissing { get; set; }
+
+        public ModalFormBase()
+        {
+            this.validateData();
+        }
 
         protected async Task callOnClose()
         {
@@ -80,6 +86,8 @@ namespace PasswordManager.Web.Pages
                 default:
                     break;
             }
+            this.validateData();
+            StateHasChanged();
         }
 
         protected async void SaveChanges()
@@ -96,6 +104,22 @@ namespace PasswordManager.Web.Pages
                     break;
             }
             this.UriHelper.NavigateTo(UriHelper.Uri, forceLoad: true);
+        }
+
+        private void validateData()
+        {
+            Console.WriteLine(IsRequiredDataMissing);
+            if (this.Data.Url != "" && this.Data.Url != null
+                && this.Data.ServiceName!= "" && this.Data.ServiceName != null
+                && this.Data.Username != "" && this.Data.Username != null
+                && this.Data.Password != "" && this.Data.Password != null)
+            {
+                this.IsRequiredDataMissing = false;
+            }
+            else
+            {
+                this.IsRequiredDataMissing = true;
+            }
         }
     }
 }
