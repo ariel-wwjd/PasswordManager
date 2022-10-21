@@ -27,7 +27,6 @@ namespace PasswordManager.Web.Pages
         {
             this.validateData();
         }
-        
 
         public async Task<UserDto> SignIn(string username, string password)
         {

@@ -1,4 +1,13 @@
-﻿.user-view .add-card {
+﻿.user-view .header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-view .header .search-box {
+    width: 40%;
+}
+
+.user-view .add-card {
     position: absolute;
     background-color: rgb(199, 22, 38);
     bottom: 10px;

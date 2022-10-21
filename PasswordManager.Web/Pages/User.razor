@@ -4,18 +4,22 @@
 <PageTitle>User</PageTitle>
 
 <div class="user-view">
-    <h3>users View</h3>
+    <div class="header">
+        <h3>Welcome</h3>
+        <div class="search-box">
+            <Input Placeholder="Search" onChange="@UpdateSearchField" Label=""/>
+        </div>
+    </div>
 
-    <CardList GroupedCards="@SplitList()" />
+    <CardList Cards="@Cards" GroupedCards="@SplitList()" />
 
     <div class="add-card"><ButtonIcon Icon="Icons.Add" onClick="() => UpdateShowCreateCardModal()" /></div>
-
 
     @if (ShowCreateCardModal)
     {
         <div class="modal">
             <Modal />
-            <ModalForm Title="Create Card" onClose="@UpdateShowCreateCardModal" Data="@Data" Role="FormRole.Create" />
+            <ModalForm Title="Create Card" onClose="@UpdateShowCreateCardModal" Data="@NewCard" Role="FormRole.Create" />
         </div>
     }
 </div>
