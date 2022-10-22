@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 namespace PasswordManager.Web.Pages
 {
     /// <summary>
-    /// Enum to ensure the user pass as a parameter the right icon name.
+    /// Enum used to ensure the user pass as a parameter the right icon name.
     /// </summary>
     public enum Icons
     {
@@ -18,25 +18,26 @@ namespace PasswordManager.Web.Pages
     }
 
     /// <summary>
-    /// Button Icon Component class, this component shows only an icon instead of a label
+    /// Class used to provide the functionality and behaviour to the ButtonIcon compomnent
     /// </summary>
     public class ButtonIconBase:ComponentBase
     {
         /// <summary>
-        /// Defines the icon to be displayed
+        /// Parameter that defines the icon to be displayed
         /// </summary>
         [Parameter]
         public Icons Icon { get; set; }
 
         /// <summary>
-        /// Call back event asigned and fired when a user makes a click on the button
+        /// Callback parameter used as an event asigned and fired when a user makes a click on the button
         /// </summary>
         [Parameter]
         public EventCallback onClick { get; set; }
 
         /// <summary>
-        /// Callback caller async method for the onClick button event. This method can also work in a Sync way.
+        /// Method used to invoke the onClick button event. This method works in both Sync or Async way.
         /// </summary>
+        /// <returns>Void return</returns>
         protected async Task callOnClick()
         {
             await onClick.InvokeAsync();

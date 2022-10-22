@@ -13,36 +13,36 @@ namespace PasswordManager.Web.Pages
     }
 
     /// <summary>
-    /// Button Component class
+    /// Class used to provide the functionality and behaviour to the Button compomnent
     /// </summary>
     public class ButtonBase:ComponentBase
     {
         /// <summary>
-        /// The label of the button, preferably use upper case. If there is no label it will be BUTTON by default
+        /// Parameter used to label the button, preferably use upper case. If there is no label it will be BUTTON by default.
         /// </summary>
         [Parameter]
         public string Label { get; set; } = "BUTTON";
 
         /// <summary>
-        /// The type defines The behavior of the button, by default is button
+        /// Parameter used to define the behavior of the button, by default is button.
         /// </summary>
         [Parameter]
         public string Type { get; set; } = "button";
 
         /// <summary>
-        /// Cancels the event propagation when the event is cancelable
+        /// Parameter used to cancel the event propagation when the event is cancelable.
         /// </summary>
         [Parameter]
         public Boolean PreventDefault { get; set; } = false;
 
         /// <summary>
-        /// Defines the button behaviour using css only
+        /// Parameter used tyo define the button behaviour using css classes only.
         /// </summary>
         [Parameter]
         public ButtonClassName ClassNames { get; set; }
 
         /// <summary>
-        /// Call back event asigned and fired when a user makes a click on the button
+        /// Parameter used to set a callback event asigned and fired when a user makes a click on the button.
         /// </summary>
         [Parameter]
         public EventCallback onClick { get; set; }
@@ -50,6 +50,7 @@ namespace PasswordManager.Web.Pages
         /// <Summary>
         /// Callback caller async method for the onClick button event. This method can also work in a Sync way.
         /// </Summary>
+        /// <returns>Void return</returns>
         protected async Task callOnClick()
         {
             await onClick.InvokeAsync();
