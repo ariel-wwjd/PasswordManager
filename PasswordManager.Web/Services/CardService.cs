@@ -5,15 +5,31 @@ using PasswordManager.Web.Services.Contracts;
 
 namespace PasswordManager.Web.Services
 {
+    /// <summary>
+    /// Card Service Provider
+    /// </summary>
     public class CardService:ICardService
     {
+        /// <summary>
+        /// Allows the comunication with the Server handling CRUD type requests.
+        /// </summary>
         private readonly HttpClient httpClient;
 
+        /// <summary>
+        /// Contructor that initialize the httpClient.
+        /// </summary>
+        /// <param name="httpClient">Initialized by dependency injection</param>
         public CardService(HttpClient httpClient)
         {
             this.httpClient = httpClient;
         }
 
+        /// <summary>
+        /// Gets all cards related to a given userId
+        /// </summary>
+        /// <param name="userId">the user id of the user currently logged in</param>
+        /// <returns>A List of Cards belonging the given userId</returns>
+        /// <exception cref="System.Exception">When no content was found or the service is not available</exception>
         public async Task<List<CardDto>> GetCards(int Id)
         {
             try
@@ -42,6 +58,12 @@ namespace PasswordManager.Web.Services
 
         }
 
+        /// <summary>
+        /// Deletes a card related to a given PasswordId
+        /// </summary>
+        /// <param name="passwordId">The PasswordId of the card to be deleted</param>
+        /// <returns>A PasswordDto object related of the deleted Card</returns>
+        /// <exception cref="System.Exception">When the card was not found or the service is not available</exception>
         public async Task<PasswordDto> DeleteCard(int passwordId)
         {
             try
@@ -69,6 +91,12 @@ namespace PasswordManager.Web.Services
             }
         }
 
+        /// <summary>
+        /// Updates a card with a Given cardDto.
+        /// </summary>
+        /// <param name="UpdatedCard">Contains the data to be updated</param>
+        /// <returns>A CardDto object related to the updated Card or an exception</returns>
+        /// <exception cref="System.Exception">When the card to be updated was not found or the service is not available</exception>
         public async Task<CardDto> UpdateCard(CardDto UpdatedCard)
         {
             try
@@ -96,6 +124,12 @@ namespace PasswordManager.Web.Services
             }
         }
 
+        /// <summary>
+        /// Create a new card base on the CardDto provided
+        /// </summary>
+        /// <param name="newCard">CardDto containing the data for the new card</param>
+        /// <returns>A CardDto object related to the new created card</returns>
+        /// <exception cref="System.Exception">When the service is not able to create a card or the service is not available</exception>
         public async Task<CardDto> CreateCard(CardDto newCard)
         {
             try

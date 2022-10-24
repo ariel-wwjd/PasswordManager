@@ -5,15 +5,31 @@ using PasswordManager.Web.Services.Contracts;
 
 namespace PasswordManager.Web.Services
 {
+    /// <summary>
+    /// User Service Povider.
+    /// </summary>
     public class UserService:IUserService
     {
+        /// <summary>
+        /// Allows the comunication with the Server handling CRUD type requests.
+        /// </summary>
         private readonly HttpClient httpClient;
 
+        /// <summary>
+        /// Contructor that initialize the httpClient.
+        /// </summary>
+        /// <param name="httpClient">Initialized by dependency injection</param>
         public UserService(HttpClient httpClient)
         {
             this.httpClient = httpClient;
         }
 
+        /// <summary>
+        /// Tries to Sign In a user with the credentials provided
+        /// </summary>
+        /// <param name="signInUserDto">The user credentials</param>
+        /// <returns>A UserDto when the credentials are correct</returns>
+        /// <exception cref="System.Exception">When no user was found or the service is not available</exception>
         public async Task<UserDto> SignInUser(SignInUserDto signInUserDto)
         {
             try

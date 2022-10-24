@@ -10,7 +10,7 @@ namespace PasswordManager.Api.Repositories.Contracts
     public interface IUserRepository
     {
         /// <summary>
-        /// Method to sign in whit a given user. 
+        /// Tries to Sign In whit a given user. 
         /// </summary>
         public User SignInUser(SignInUserDto signInUserDto);
     }

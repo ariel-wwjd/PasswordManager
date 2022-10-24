@@ -191,7 +191,7 @@ namespace PasswordManager.Api.Repositories
         /// Delete a Card related to the PasswordId provided
         /// </summary>
         /// <param name="PasswordId">The PasswordId of the card to be deleted</param>
-        /// <returns>A Password ojject related of the deleted Card</returns>
+        /// <returns>A Password object related of the deleted Card</returns>
         public Password DeleteCard(int PasswordId)
         {
             using (var context = new PasswordManagerDbContext())
@@ -206,7 +206,7 @@ namespace PasswordManager.Api.Repositories
         /// <summary>
         /// Find all the cards related to a given userId
         /// </summary>
-        /// <param name="userId">the user id currently logged in</param>
+        /// <param name="userId">the user id of the user currently logged in</param>
         /// <returns>A List of Cards belonging the given userId</returns>
         public List<Card> GetCards(int userId)
         {
